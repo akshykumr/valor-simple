@@ -19,6 +19,8 @@ const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
+const more = String.fromCharCode(8206)
+const readMore = more.repeat(4001)
 
 let cmdmedia = JSON.parse(fs.readFileSync('./src/cmdmedia.json'))
 let game = JSON.parse(fs.readFileSync("./src/game.json"))
@@ -2309,7 +2311,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │⭔ ${prefix}hapusvote
 │
 └───────⭓
-
+${readMore}
 ┌──⭓〔 *Downloader Menu* 〕
 │
 │⭔ ${prefix}tiktoknowm [url]
