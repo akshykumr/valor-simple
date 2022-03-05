@@ -2584,12 +2584,12 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                             hydratedButtons: [{
                                 urlButton: {
                                     displayText: 'Source Code',
-                                    url: 'https://github.com/DineshValor/Valor-Bot'
+                                    url: 'https://github.com/DineshValor/valor-simple'
                                 }
                             }, {
                                 callButton: {
-                                    displayText: 'Number Phone Owner',
-                                    phoneNumber: '+91 9107-9107-99'
+                                    displayText: null,
+                                    phoneNumber: null
                                 }
                             }, {
                                 quickReplyButton: {
@@ -2603,7 +2603,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                                 }  
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Script (upload soon)',
+                                    displayText: null,
                                     id: 'sc'
                                 }
                             }]
