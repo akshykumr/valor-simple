@@ -22,8 +22,23 @@ const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 
+let package = JSON.parse(fs.readFileSync('package.json'))
 let cmdmedia = JSON.parse(fs.readFileSync('./src/cmdmedia.json'))
 let game = JSON.parse(fs.readFileSync("./src/game.json"))
+let d = new Date(new Date + 3600000)
+    let locale = 'en'
+    // d.getTimeZoneOffset()
+    // Offset -420 is 18.00
+    // Offset    0 is  0.00
+    // Offset  420 is  7.00
+    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
+    let week = d.toLocaleDateString(locale, { weekday: 'long' })
+    let date = d.toLocaleDateString(locale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    })
+let time = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 let tebaklagu = game.tebaklagu = []
 let _family100 = game.family100 = []
 let kuismath = game.math = []
@@ -2288,8 +2303,21 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 valor.sendContact(m.chat, global.owner, m)
             }
             break
-            case 'list': case 'menu': case 'help': case '?': {
-                anu = `┌──⭓〔 *Group Menu* 〕
+            case 'list': case 'menu': case 'help': case null: {
+                anu = `🧑‍🏫  ɪ ' ᴍ  ʜᴇʀᴇ  ᴛᴏ  ʜᴇʟᴩ  ʏᴏᴜ  🧑‍🏫
+                
+╭─〔 *${package.name}* 〕
+├ *ᴠᴇʀsɪᴏɴ:* ${package.version}
+├ *ᴩʀᴇғɪx:* ${prefix}
+│ 
+├ *ᴜᴩᴛɪᴍᴇ:* ${runtime(process.uptime())}
+│ 
+├ *ᴅᴀᴛᴇ:* ${week}, ${date}
+├ *ᴛɪᴍᴇ:* ${time} (GMT +5:30)
+╰────˧
+👇🏻 ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ʟɪsᴛᴇᴅ ʙᴇʟᴏᴡ 👇🏻
+${readMore}
+┌──⭓〔 *Group Menu* 〕
 │
 │⭔ ${prefix}linkgroup
 │⭔ ${prefix}ephemeral [option]
@@ -2311,7 +2339,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │⭔ ${prefix}hapusvote
 │
 └───────⭓
-${readMore}
+
 ┌──⭓〔 *Downloader Menu* 〕
 │
 │⭔ ${prefix}tiktoknowm [url]
@@ -2506,7 +2534,7 @@ ${readMore}
 │
 │⭔ ${prefix}ping
 │⭔ ${prefix}owner
-│⭔ ${prefix}menu / ${prefix}help / ${prefix}?
+│⭔ ${prefix}menu / ${prefix}help
 │⭔ ${prefix}delete
 │⭔ ${prefix}infochat
 │⭔ ${prefix}quoted
@@ -2595,18 +2623,18 @@ ${readMore}
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Status Bot',
+                                    displayText: 'sᴛᴀᴛᴜs',
                                     id: 'ping'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Contact Owner',
+                                    displayText: 'ᴏᴡɴᴇʀ',
                                     id: 'owner'
                                 }  
                             }, {
                                 quickReplyButton: {
                                     displayText: null,
-                                    id: 'sc'
+                                    id: null
                                 }
                             }]
                         }
