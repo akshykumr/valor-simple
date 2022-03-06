@@ -1,7 +1,7 @@
 {
-  "name": "valor-bot",
-  "version": "4.0.1",
-  "description": "WhatsApp Using Lib Baileys Multi Device",
+  "name": "Valor-Bot",
+  "version": "2.22.5.72-beta",
+  "description": "Baileys Multi Device",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
@@ -58,10 +58,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DineshValor/Valor-Bot.git"
+    "url": "git+https://github.com/DineshValor/valor-simple.git"
   },
   "bugs": {
-    "url": "https://github.com/DineshValor/Valor-Bot/issues"
+    "url": "https://github.com/DineshValor/valor-simple/issues"
   },
-  "homepage": "https://github.com/DineshValor/Valor-Bot#readme"
+  "homepage": "https://github.com/DineshValor/valor-simple#readme"
 }

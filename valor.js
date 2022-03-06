@@ -2303,12 +2303,11 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 valor.sendContact(m.chat, global.owner, m)
             }
             break
-            case 'list': case 'menu': case 'help': case null: {
-                anu = `🧑‍🏫  ɪ ' ᴍ  ʜᴇʀᴇ  ᴛᴏ  ʜᴇʟᴩ  ʏᴏᴜ  🧑‍🏫
-                
-╭─〔 *${package.name}* 〕
+            case 'list': case 'menu': case 'help': case 'valor': {
+                anu = `╭─〔 *${package.name}* 〕
 ├ *ᴠᴇʀsɪᴏɴ:* ${package.version}
-├ *ᴩʀᴇғɪx:* ${prefix}
+├ *ʟɪʙʀᴀʀʏ:* ${package.description}
+├ *ᴩʀᴇғɪx:* *${prefix}*
 │ 
 ├ *ᴅᴀᴛᴇ:* ${week}, ${date}
 ├ *ᴛɪᴍᴇ:* ${time} (ɢᴍᴛ +5:30)
@@ -2534,7 +2533,7 @@ ${readMore}
 │
 │⭔ ${prefix}ping
 │⭔ ${prefix}owner
-│⭔ ${prefix}menu / ${prefix}help
+│⭔ ${prefix}menu / ${prefix}help / ${prefix}valor
 │⭔ ${prefix}delete
 │⭔ ${prefix}infochat
 │⭔ ${prefix}quoted
@@ -2605,42 +2604,21 @@ ${readMore}
 │⭔ ${prefix}setppbot [image]
 │
 └───────⭓`
-                let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/valor.jpg') }, { upload: valor.waUploadToServer })
-                const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                    templateMessage: {
-                        hydratedTemplate: {
-                            imageMessage: message.imageMessage,
-                            hydratedContentText: anu,
-                            hydratedButtons: [{
-                                urlButton: {
-                                    displayText: 'sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ',
-                                    url: 'https://github.com/DineshValor/valor-simple'
-                                }
-                            }, {
-                                callButton: {
-                                    displayText: null,
-                                    phoneNumber: null
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'sᴛᴀᴛᴜs',
-                                    id: 'ping'
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'ᴏᴡɴᴇʀ',
-                                    id: 'owner'
-                                }  
-                            }, {
-                                quickReplyButton: {
-                                    displayText: null,
-                                    id: null
-                                }
-                            }]
-                        }
-                    }
-                }), { userJid: m.chat, quoted: m })
-                valor.relayMessage(m.chat, template.message, { messageId: template.key.id })
+                let buttons = [
+                    {buttonId: 'ping', buttonText: {displayText: 'sᴛᴀᴛᴜs'}, type: 1},
+                    {buttonId: 'owner', buttonText: {displayText: 'ᴏᴡɴᴇʀ'}, type: 1}
+                ]
+                let fatihgans = fs.readFileSync('./lib/valor.jpg')
+                let buttonMessage = {
+
+                    image: fatihgans,
+
+                    caption: '```🧑‍🏫ɪ\'ᴍ ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴩ ʏᴏᴜ🧑‍🏫```',
+                    footer: anu,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                      valor.sendMessage(m.chat, buttonMessage)
             }
             break
             default:

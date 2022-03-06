@@ -14,7 +14,7 @@ global.APIs = {
 
 // Apikey Website Api
 global.APIKeys = {
-	'https://zenzapi.xyz': 'a22d0b89819f',
+	'https://zenzapi.xyz': 'd5fb04bbf537',
 }
 
 // Other
@@ -23,7 +23,7 @@ global.packname = 'Valor Bot'
 global.author = 'Dinesh Valor'
 global.sessionName = 'session.data'
 global.prefa = ['','!','@','#','/','.','🐦','🐤','🗿']
-global.sp = '⭔'
+global.sp = '├'
 global.mess = {
     success: '✓ Success',
     admin: 'Group Admin Special Features!',
