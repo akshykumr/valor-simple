@@ -2311,7 +2311,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 ├ *ᴩʀᴇғɪx:* ${prefix}
 │ 
 ├ *ᴅᴀᴛᴇ:* ${week}, ${date}
-├ *ᴛɪᴍᴇ:* ${time} (GMT +5:30)
+├ *ᴛɪᴍᴇ:* ${time} (ɢᴍᴛ +5:30)
 │ 
 ├ *ᴜᴩᴛɪᴍᴇ:* ${runtime(process.uptime())}
 ╰────˧
