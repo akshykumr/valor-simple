@@ -2310,10 +2310,10 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 ├ *ᴠᴇʀsɪᴏɴ:* ${package.version}
 ├ *ᴩʀᴇғɪx:* ${prefix}
 │ 
-├ *ᴜᴩᴛɪᴍᴇ:* ${runtime(process.uptime())}
-│ 
 ├ *ᴅᴀᴛᴇ:* ${week}, ${date}
 ├ *ᴛɪᴍᴇ:* ${time} (GMT +5:30)
+│ 
+├ *ᴜᴩᴛɪᴍᴇ:* ${runtime(process.uptime())}
 ╰────˧
 👇🏻 ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ʟɪsᴛᴇᴅ ʙᴇʟᴏᴡ 👇🏻
 ${readMore}
@@ -2613,7 +2613,7 @@ ${readMore}
                             hydratedContentText: anu,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'Source Code',
+                                    displayText: 'sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ',
                                     url: 'https://github.com/DineshValor/valor-simple'
                                 }
                             }, {
